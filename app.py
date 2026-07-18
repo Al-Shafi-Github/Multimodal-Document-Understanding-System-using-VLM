@@ -174,8 +174,6 @@ if __name__ == "__main__":
                 failed = settings.FAILED_DIR / job.filename
                 safe_move(job.path, failed)
 
-                job.path.rename(failed)
-
                 stats.failed += 1
 
                 continue

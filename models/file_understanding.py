@@ -84,10 +84,10 @@ class FileUnderstanding(BaseModel):
         max_length=60,
     )
 
-    document_title: Optional[str] = Field(
-        default=None,
-        max_length=100,
-    )
+    # document_title: Optional[str] = Field(
+    #     default=None,
+    #     max_length=100,
+    # )
 
     document_date: Optional[str] = Field(
         default=None,

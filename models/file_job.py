@@ -28,13 +28,13 @@ class FileJob:
   
     # AI Response
 
-    category: str | None = None
-    organization: str | None = None
-    document_title: str | None = None
-    document_date: str | None = None
-    document_number: str | None = None
+    # category: str | None = None
+    # organization: str | None = None
+    # document_title: str | None = None
+    # document_date: str | None = None
+    # document_number: str | None = None
 
-    confidence: float | None = None
+    # confidence: float | None = None
 
   
     # Output

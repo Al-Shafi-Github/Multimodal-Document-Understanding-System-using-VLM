@@ -40,7 +40,7 @@ SUPPORTED_TEXT_EXTENSIONS = {
 
 
 MAX_EXTRACTED_CHARS = 4000  # ≈1000-1300 tokens, leaves headroom for the ~400-token system prompt within an 8192 context
-
+MAX_FILE_SIZE_BYTES = 50 * 1024 * 1024  # 50 MB 
 
 def _cap_text(text: str) -> str:
     if len(text) > MAX_EXTRACTED_CHARS:
@@ -57,6 +57,15 @@ def preprocess(job: FileJob) -> None:
 
     try:
 
+
+        if job.size > MAX_FILE_SIZE_BYTES:
+            job.add_error(
+                f"File exceeds size limit "
+                f"({job.size} bytes > {MAX_FILE_SIZE_BYTES} bytes) — "
+                f"rejected before parsing."
+            )
+            return
+        
         suffix = job.extension.lower()
 
         if suffix == ".svg":

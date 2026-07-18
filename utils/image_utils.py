@@ -25,6 +25,8 @@ TEMP_DIR = Path("data/temp")
 TEMP_DIR.mkdir(parents=True, exist_ok=True)
 
 
+Image.MAX_IMAGE_PIXELS = 40_000_000  # ~40 megapixels; explicit ceiling,
+
 def load_image(path: Path) -> Image.Image:
     """
     Load image from disk.

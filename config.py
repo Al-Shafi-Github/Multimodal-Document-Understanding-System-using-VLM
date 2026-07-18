@@ -22,9 +22,7 @@ class Settings(BaseSettings):
 
     # Pipeline
     CONFIDENCE_THRESHOLD: float = Field(default=0.30, ge=0.0, le=1.0)
-    MAX_RETRY: int = 1
-    MAX_WORKERS: int = 4
-    HASH_LENGTH: int = 6
+
 
     LOG_LEVEL: str = "INFO"
 

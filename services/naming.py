@@ -24,6 +24,8 @@ CATEGORY_TEMPLATES: dict[str, list[str]] = {
     "book": ["subject", "organization", "date"],
     "chart": ["subject", "organization", "date"],
     "graph": ["subject", "organization", "date"],
+    "resume": ["organization", "date"],
+    "business_card": ["organization", "date"],
 }
 DEFAULT_TEMPLATE = ["subject", "organization", "date", "identifier"]
 
