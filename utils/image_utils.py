@@ -90,13 +90,6 @@ def save_temp_png(image: Image.Image) -> Path:
     return output
 
 
-def remove_temp_file(path: Path) -> None:
-    """
-    Delete temporary PNG.
-    """
-
-    if path.exists():
-        path.unlink()
 
 def image_from_pixmap(pixmap) -> Image.Image:
     """
@@ -106,73 +99,73 @@ def image_from_pixmap(pixmap) -> Image.Image:
     image = Image.frombytes(mode, (pixmap.width, pixmap.height), pixmap.samples)
     return image.convert("RGB")
 
+# def remove_temp_file(path: Path) -> None:
+#     """
+#     Delete temporary PNG.
+#     """
 
-def text_to_image(
-    text: str,
-    width: int = 1100,
-    margin: int = 40,
-) -> Image.Image:
-    """
-    Render plain text into an RGB image.
-
-    This allows Vision Language Models to reason over
-    textual documents while preserving layout.
-    """
-
-    try:
-        font = ImageFont.truetype("arial.ttf", 22)
-    except Exception:
-        font = ImageFont.load_default()
-
-    dummy = Image.new("RGB", (width, 100), "white")
-    draw = ImageDraw.Draw(dummy)
-
-    lines = []
-
-    for paragraph in text.splitlines():
-
-        current = ""
-
-        for word in paragraph.split():
-
-            test = current + " " + word if current else word
-
-            if draw.textlength(test, font=font) <= width - margin * 2:
-
-                current = test
-
-            else:
-
-                lines.append(current)
-
-                current = word
-
-        lines.append(current)
-
-    line_height = 32
-
-    height = max(300, margin * 2 + line_height * len(lines))
-
-    image = Image.new("RGB", (width, height), "white")
-
-    draw = ImageDraw.Draw(image)
-
-    y = margin
-
-    for line in lines:
-
-        draw.text((margin, y), line, fill="black", font=font)
-
-        y += line_height
-
-    return image
+#     if path.exists():
+#         path.unlink()
 
 
-def load_svg_as_image(path: Path) -> Image.Image:
-    """
-    Rasterize an SVG to a PIL Image. Pure-Python (svglib + reportlab),
-    no native Cairo/GTK dependency needed on Windows.
-    """
-    drawing = svg2rlg(str(path))
-    png_bytes = renderPM.drawToString(drawing, fmt="PNG")
-    return Image.open(io.BytesIO(png_bytes)).convert("RGB")
+
+
+# def text_to_image(
+#     text: str,
+#     width: int = 1100,
+#     margin: int = 40,
+# ) -> Image.Image:
+#     """
+#     Render plain text into an RGB image.
+
+#     This allows Vision Language Models to reason over
+#     textual documents while preserving layout.
+#     """
+
+#     try:
+#         font = ImageFont.truetype("arial.ttf", 22)
+#     except Exception:
+#         font = ImageFont.load_default()
+
+#     dummy = Image.new("RGB", (width, 100), "white")
+#     draw = ImageDraw.Draw(dummy)
+
+#     lines = []
+
+#     for paragraph in text.splitlines():
+
+#         current = ""
+
+#         for word in paragraph.split():
+
+#             test = current + " " + word if current else word
+
+#             if draw.textlength(test, font=font) <= width - margin * 2:
+
+#                 current = test
+
+#             else:
+
+#                 lines.append(current)
+
+#                 current = word
+
+#         lines.append(current)
+
+#     line_height = 32
+
+#     height = max(300, margin * 2 + line_height * len(lines))
+
+#     image = Image.new("RGB", (width, height), "white")
+
+#     draw = ImageDraw.Draw(image)
+
+#     y = margin
+
+#     for line in lines:
+
+#         draw.text((margin, y), line, fill="black", font=font)
+
+#         y += line_height
+
+#     return image

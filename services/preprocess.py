@@ -13,7 +13,6 @@ from utils.image_utils import (
     load_image,
     normalize_image,
     save_temp_png,
-    text_to_image,
     image_from_pixmap,
 )
 
