@@ -1,0 +1,26 @@
+pydantic-settings>=2.10.0
+python-dotenv>=1.1.0
+loguru>=0.7.3
+httpx>=0.28.1
+orjson>=3.11.0
+Pillow>=11.3.0
+opencv-python>=4.12.0
+PyMuPDF>=1.26.3
+pdf2image>=1.17.0
+python-docx>=1.2.0
+odfpy>=1.4.1
+pandas>=2.3.1
+python-magic-bin>=0.4.14; platform_system=="Windows"
+python-magic>=0.4.27; platform_system!="Windows"
+tqdm>=4.67.1
+psutil>=7.0.0
+rapidfuzz>=3.13.0
+pytest>=8.4.1
+pytest-cov>=6.2.1
+black>=25.1.0
+ruff>=0.12.5
+typing_extensions>=4.14.1
+openai>=1.99.0
+pillow-heif
+cairosvg
+striprtf

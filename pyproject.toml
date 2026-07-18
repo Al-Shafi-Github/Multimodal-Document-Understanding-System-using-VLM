@@ -1,0 +1,39 @@
+[project]
+name = "datacrunch-ai-renamer"
+version = "0.1.0"
+description = "Offline AI-powered intelligent file renaming system."
+requires-python = ">=3.12"
+
+authors = [
+    {name = "Abdullah Al Shafi"}
+]
+
+dependencies = []
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "UP",
+    "N",
+    "B"
+]
+
+ignore = []
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

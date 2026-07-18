@@ -1,0 +1,20 @@
+Your previous JSON response failed validation.
+
+Validation error:
+{validation_error}
+
+Previous JSON:
+{previous_output}
+
+Instructions:
+
+- Correct ONLY the validation errors.
+- Preserve every field that is already valid.
+- Do NOT invent information.
+- If evidence is missing, use null.
+- Return ONE valid JSON object.
+- Do NOT include explanations.
+- Do NOT include markdown.
+- Do NOT wrap the JSON in code fences.
+
+Output ONLY the corrected JSON object.
