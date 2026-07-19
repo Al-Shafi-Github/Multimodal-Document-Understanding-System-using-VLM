@@ -118,7 +118,7 @@ class FileUnderstanding(BaseModel):
     @field_validator(
         "primary_subject",
         "organization",
-        "document_title",
+        # "document_title",
         "document_number",
     )
     @classmethod
