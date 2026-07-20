@@ -225,7 +225,7 @@ These are constraints of the selected model size and quantization level, or of t
 ## 8. Project Structure
 
 ```
-datacrunch-ai-renamer/
+Multimodal-Document-Understanding-System-using-VLM/
 ├── app.py                     # Entry point — orchestrates the full pipeline
 ├── config.py                  # Settings (paths, model name, thresholds) via pydantic-settings           # Custom exception hierarchy for typed error handling
 ├── requirements.txt
