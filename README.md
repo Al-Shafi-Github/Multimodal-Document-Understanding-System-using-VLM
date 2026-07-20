@@ -1,4 +1,4 @@
-# DataCrunch AI Renamer
+# Multimodal-Document-Understanding-System-using-VLM
 
 A privacy-first, fully offline pipeline that classifies and renames local files (documents, receipts, images) using a local vision-language model. No cloud APIs are used at any point during inference.
 
